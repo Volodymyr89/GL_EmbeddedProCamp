@@ -1,4 +1,0 @@
-1. Create function to copy all digits from input string to output string
-2. Create function to find thebiggest element in integer array
-3. Create linked list library with functions (ListAdd(), Listls(), ListRemove())
-New elements in list should be dynamally allocated.
