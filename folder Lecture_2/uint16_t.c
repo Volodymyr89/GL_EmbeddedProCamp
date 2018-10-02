@@ -3,7 +3,7 @@
 
 uint16_t swap16 (uint16_t  D)
 {
-	D= ((D<<8)&0xFF00)|((D>>8)&0x00FF);// swap function
+	D = ((D << 8) &0xFF00)|((D>>8)&0x00FF);// swap function
 	return D;
 }
 
