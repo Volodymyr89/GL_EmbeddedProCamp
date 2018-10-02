@@ -6,9 +6,10 @@ Write your code in this editor and press "Run" button to compile and execute it.
 
 *******************************************************************************/
 #include<stdio.h>
+
 int main()
 {
-  int c, n=10, fact = 1;
+  int c, n = 10, fact = 1;
  
   for (c = 1; c <= n; c++)
     fact = fact * c;
