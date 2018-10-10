@@ -7,23 +7,59 @@ struct node
 	int data;
 	struct node* next;
 };
-struct node*head;
-int main()
+
+struct node* head;
+
+head = NULL;
+
+void listAdd(int new_data)
 {
-	head = NULL;
-	int new_data = 0, back=0, i, data=0;
-	for (i = 0; i < 5;i++) //create 5 nodes
+	struct node* temp = (struct node*)malloc(sizeof(struct node));
+	temp->data = new_data;
+	temp->next = head;
+	head = temp;
+}
+
+void listRemove()
+{
+	struct node* temp = head;
+	struct node* node_remove = NULL;
+	while (temp->next != NULL)
 	{
-		printf("\nEnter new_data:\n");
-		scanf_s("%d", &new_data);
-		listAdd(new_data);
-		print();
+		node_remove = temp;
+		temp = temp->next;
 	}
-	printf("\nRemoved last node\n");
-	listRemove();
-	print();
-	printf("\nEnter data to find:\n");
-	scanf_s("%d", &data);
-	listls(data);
-	system("pause");
+	if (node_remove != NULL)
+		node_remove->next = NULL;
+	if (temp == head)
+		head = NULL;
+	free(temp);
+}
+
+void print()
+{
+	struct node* temp = head;
+	printf("List:");
+	while (temp != NULL)
+	{
+		printf("%d", temp->data);
+		temp = temp->next;
+	}
+}
+
+bool listIs(int data)
+{
+	struct node* temp = head;
+	while (temp != NULL)
+	{
+		if (temp->data == data)
+		{
+			printf("Entered Data is present in List");
+			break;
+		}
+			printf("\nNothing Found\n");
+			break;
+
+		temp = temp->next;
+	}
 }

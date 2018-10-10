@@ -2,9 +2,13 @@
 
 #include <stdio.h>
 #include <stdint.h>
-uint8_t array[5], maximum, c;
-uint8_t Compare(uint8_t maximum)
+
+int array[5];
+
+int Compare(void)
 {
+    int maximum;
+    
 	maximum = array[0];
 	for (c = 1; c < 5; c++)
 	{
@@ -15,12 +19,15 @@ uint8_t Compare(uint8_t maximum)
 	}
 	return maximum;
 }
-int main()
+
+int main(void)
 {
+    uint8_t c;
+    
 	printf("Enter Number:\n");
 	for (c = 0; c < 5; c++)
 		scanf_s("%d", &array[c]);
-	printf("Maximum is: %d\n", Compare((uint8_t) maximum));
+	printf("Maximum is: %d\n", Compare());
 	system("pause");
 	return 0;
 }

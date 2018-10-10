@@ -1,33 +1,39 @@
 #include <stdio.h>
 #include <stdint.h>
-uint8_t inputStr[5];
-uint8_t i = 0;
-uint8_t j = 0;
-uint8_t m=0;
-uint8_t CopyStr[5];
 
-uint8_t Copy(uint8_t CopyStr[5])
-{
-	CopyStr = inputStr[j];
-	return CopyStr;
+uint8_t inputStr[6];                // 5 symbols of string and last symbol - '\0' (end of string)
+uint8_t outStr[6];
+
+void Copy(uint8_t* dest)
+{    
+    uint8_t j;
+    
+    for (j = 0; j < 6; j++) 
+	{
+        dest[j] = inputStr[j];           // Copy input string to destination
+    }
 }
 
 int main()
 {
+    uint8_t i;
+    
 	printf("Enter five digits:\n");
 	scanf_s("%d", &inputStr[i]);
+    i = 0;
 	while (i <4)
-		{
+	{
 		i++;
 		printf("Next Digit:\n");
 		scanf_s("%d", &inputStr[i]);
 		
 	}
+    inputStr[5] = '\0';
+    
+    Copy(outStr);
+    
+	printf("Output string is %s", outStr);
 
-	for (j = 0; j < 5; j++) 
-	{
-		printf("Element[%d]=%d\n", j, Copy(CopyStr[j]));
-	}
 	system("pause");
 	
 }
