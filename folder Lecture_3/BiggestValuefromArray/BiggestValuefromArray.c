@@ -4,11 +4,12 @@
 #include <stdint.h>
 
 int array[5];
+uint8_t c;
 
 int Compare(void)
 {
-    int maximum;
-    
+	int maximum;
+
 	maximum = array[0];
 	for (c = 1; c < 5; c++)
 	{
@@ -22,8 +23,6 @@ int Compare(void)
 
 int main(void)
 {
-    uint8_t c;
-    
 	printf("Enter Number:\n");
 	for (c = 0; c < 5; c++)
 		scanf_s("%d", &array[c]);
