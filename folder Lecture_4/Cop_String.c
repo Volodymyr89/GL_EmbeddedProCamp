@@ -1,15 +1,16 @@
 #include<stdio.h>
 
+// @remark Add protection that will prevent string overflow if you will enter string with length 100 and more symbols
+
 char Input [100], Output[100];
+
 void CopyStr()
 {
 	int i;
-	printf("Output String:\n");
-	for (i = 0; Input[i] !='\0'; ++i)
+	for (i = 0; Input[i] != '\0'; ++i)
 	{
 		Output[i] = Input[i];
 	}
-	printf("%s\n", Output);
 }
 
 int main()
@@ -17,5 +18,6 @@ int main()
 	printf("Enter word to copy\n");
 	scanf_s("%s", Input, sizeof(Input));
 	CopyStr();
+	printf("Output String: %s\n", Output);
 	system("pause");
 }

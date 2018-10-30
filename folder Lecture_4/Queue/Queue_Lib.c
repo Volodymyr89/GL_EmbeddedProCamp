@@ -1,11 +1,15 @@
+// @remark You should include all needed files
+
 
 void Put(int *q, int *tail, int element)
 {
+	// @remark Add protection from array overflow (I saw that it was imlemented in Queue.c)
 	q[(*tail)++] = element;
 }
 
 int Get(int *q, int *head)
 {
+	// @remark Add protection from array overflow (I saw that it was imlemented in Queue.c)
 	return q[(*head)++];
 }
 

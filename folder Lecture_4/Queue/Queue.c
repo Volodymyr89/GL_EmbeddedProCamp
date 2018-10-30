@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "Queue.h";
 
+
+// @remark This function should be in Queue_Lib module
 void init(int *head, int *tail)
 {
 	*head = *tail = 0;
@@ -9,6 +11,8 @@ void init(int *head, int *tail)
 
 int main()
 {
+	// @remark Create (inside Queue_Lib) struct for all data of queue 
+	//			and use pointer to struct for functions in Queue_Lib
 	int SIZE = 5;
 	int head, tail, element;
 	int queue[5];

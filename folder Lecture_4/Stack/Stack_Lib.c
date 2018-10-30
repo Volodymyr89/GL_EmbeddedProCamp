@@ -1,6 +1,10 @@
 
 #include <stdio.h>
+// Task: Create stack library based on linked list
 
+// @remark This module should be based on LinkedList moduel.
+
+// @remark Leave only one definition of "struct node"
 struct node
 {
 	int data;
@@ -12,7 +16,7 @@ struct node* push(struct node* head, int data)
 	struct node* tmp = (struct node*)malloc(sizeof(struct node));
 	if (tmp == NULL)
 	{
-		exit(0);
+		exit(0);		// @remark Do not use "exit", just return head
 	}
 	tmp->data = data;
 	tmp->next = head;
